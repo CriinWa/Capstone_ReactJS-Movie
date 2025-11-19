@@ -1,12 +1,15 @@
 import { PATH } from "@/constants";
 import { HomePages } from "@/features/home/components";
-import { Outlet, type RouteObject } from "react-router-dom";
+import { SignInPage } from "@/features/signIn/components";
+import { MainLayout } from "@/layouts/mainLayout/MainLayout";
+import { type RouteObject } from "react-router-dom";
 
 export const routes: RouteObject[] = [
     {
         //Main layout
         path: PATH.HOME,
-        element: <div>Main Layout <Outlet /></div>,
+        // element: <div>Main Layout <Outlet /></div>, //Chỉnh sửa ở buổi 39
+        element: <MainLayout />,
         //có thẻ Outlet để hiển thị chứa các thẻ con bên dưới
         children: [
             {
@@ -16,6 +19,10 @@ export const routes: RouteObject[] = [
             {
                 path: PATH.MOVIE_DETAIL(":id"),
                 element: <div>Movie Page</div>
+            },
+            {
+                path: PATH.SIGN_IN,
+                element: <SignInPage />
             }
         ],
     },
@@ -24,5 +31,5 @@ export const routes: RouteObject[] = [
         element: <div>404 Not Found</div>
     }
 ] as const;
-// children như là Nexted Routes đã từng làm
+// children như là Nested Routes đã từng làm
 // path tách ra để trong constants/paths.ts dễ quản lí hơn

@@ -27,4 +27,8 @@
 
 -features: Chứa toàn bộ source liên quan đến 1 features (home, movieDetail, signIn, signUp,..)
 -lib: custom lại thư viện dự án
--
+-router: 
+
+-services: call api
+
+- schema: (trong SignIn chẳn hạn) để validation form

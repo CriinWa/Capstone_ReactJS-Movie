@@ -3,3 +3,7 @@ export interface Banner {
   maPhim: number
   hinhAnh: string
 }
+//trả về danh sách banner dạng mảng
+// export interface GetBannerResponse {
+//   content: Banner[]
+// }

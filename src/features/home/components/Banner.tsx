@@ -3,20 +3,27 @@ import { Button } from '@/components/ui';
 import { quanLyPhimServices } from '@/services/quanLyPhim/quanLyPhimServices';
 import { useQuery } from '@tanstack/react-query';
 import { queryKeys } from '@/constants';
+import { useQueryBanners } from '../hook';
+// import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
-type BannerProps = {
-    data: number[];
-    color?: string;
-    handleClick(): void;
-    // ? là optional prop, không bắt buộc phải truyền vào
-}
+// type BannerProps = {
+//     data: number[];
+//     color?: string;
+//     handleClick(): void;
+//     // ? là optional prop, không bắt buộc phải truyền vào
+// }
 
-export const Banner = ({data, color, handleClick}: BannerProps) => {
-  console.log("🚀 ~ Banner ~ color:", color)
-  console.log("🚀 ~ Banner ~ data:", data)
+export const Banner = () => {
   
 
-  const [count, setCount] = React.useState(0);
+  // const [count, setCount] = React.useState(0);
   // const [count, setCount] = React.useState<number>();
 
   // const getBanners = async () => {
@@ -39,17 +46,28 @@ export const Banner = ({data, color, handleClick}: BannerProps) => {
   // // [] chỉ chạy 1 lần khi component được mount lên
   // // [count] chạy mỗi khi count thay đổi
 
-  const {data: banner} = useQuery( {
-    queryKey: queryKeys.banner.lists(),
-    queryFn: () => quanLyPhimServices.getBanners(),
-  })
-  console.log("🚀 ~ Banner ~ banner:", banner)
+
+  //Buổi 39 tách hook useQueryBanners ra 1 file riêng 
+  const {data: banners} = useQueryBanners();
+  // const {data: banner} = useQuery( {
+  //   queryKey: queryKeys.banner.lists(),
+  //   queryFn: () => quanLyPhimServices.getBanners(),
+  // })
+  console.log("🚀 ~ Banner ~ banner:", banners?.data.content)
 
   return (
-    <div>
-      <p>Count: {count}</p>
-      <Button onClick={() => setCount(count+1)}>+ Count </Button>
-
+    <div className='container mx-auto'>
+      <Carousel className="w-full">
+          <CarouselContent>
+            {banners?.data.content.map((item) => (
+              <CarouselItem key={item.maPhim}>
+                <img src={item.hinhAnh} alt={`Banner ${item.maPhim}`} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+      <CarouselNext />
+      <CarouselPrevious />
+    </Carousel>
     </div>
   )
 }
