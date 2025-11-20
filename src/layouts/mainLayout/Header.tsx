@@ -1,11 +1,12 @@
 import { PATH } from "@/constants/paths";
-import { useAuth } from "@/hooks";
+import { useAuth, useRole } from "@/hooks";
 import { useNavigate } from "react-router-dom";
 import { UserDropdown } from "./UserDropdown";
 
 export const Header = () => {
     const navigate = useNavigate();
     const { user } = useAuth();
+    const { isAdmin } = useRole();
 
     return (
 
@@ -17,7 +18,18 @@ export const Header = () => {
                 </a>
                 <div className="flex gap-3 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     {user ? (
-                        <UserDropdown user={user} />
+                        <div className="flex items-center gap-3">
+                            {isAdmin && (
+                                <button
+                                    type="button"
+                                    className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+                                    onClick={() => navigate(PATH.ADMIN)}
+                                >
+                                    🔧 Admin
+                                </button>
+                            )}
+                            <UserDropdown user={user} />
+                        </div>
                     ) : (
                         <>
                             <button

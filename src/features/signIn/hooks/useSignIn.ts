@@ -7,6 +7,7 @@ import { signInActions } from "../redux/signIn.slice";
 import { useNavigate } from "react-router-dom";
 import { PATH } from "@/constants/paths";
 import { STORAGEKEYS } from "@/constants";
+import { toast } from "react-hot-toast";
 
 export const useSignIn = () => {
     const form = useForm<FormSignInValues>({
@@ -44,13 +45,16 @@ export const useSignIn = () => {
             dispatch(signInActions.setAccessToken(accessToken))
             dispatch(signInActions.setUser(userWithoutToken))
 
-            //Thông báo dăng nhập thành công
-            navigate(PATH.HOME); //chuyển hướng về trang home sau khi đăng nhập thành công
+            // REDIRECT DỰA TRÊN ROLE
+            if (userWithoutToken.maLoaiNguoiDung === 'QuanTri') {
+            navigate(PATH.ADMIN); // Admin → /admin
+            } else {
+            navigate(PATH.HOME); // Customer → /
+            }
 
-
+            toast.success(`Chào mừng ${userWithoutToken.hoTen}!`);
         } catch (error) {
-            //Xử lý lỗi (hiển thị thông báo lỗi, v.v.)
-            console.error("Sign-in error:", error);
+            toast.error("Đăng nhập thất bại");
         }
 
     }

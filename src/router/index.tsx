@@ -3,6 +3,12 @@ import { HomePages } from "@/features/home/components";
 import { SignInPage } from "@/features/signIn/components";
 import { SignUpPage } from "@/features/signUp/components";
 import { MainLayout } from "@/layouts/mainLayout/MainLayout";
+import { AdminLayout } from "@/layouts/adminLayout/AdminLayout";
+import { AdminRoute } from "@/components/routes";
+import { AdminDashboard } from "@/features/admin/dashboard/AdminDashboard";
+import { AdminMovies } from "@/features/admin/movies/AdminMovies";
+import { AdminUsers } from "@/features/admin/users/AdminUsers";
+import { AdminSchedules } from "@/features/admin/schedules/AdminSchedules";
 import { type RouteObject } from "react-router-dom";
 
 export const routes: RouteObject[] = [
@@ -30,6 +36,33 @@ export const routes: RouteObject[] = [
                 element: <SignUpPage />
             }
         ],
+    },
+    {
+        // Admin Layout - Chỉ Admin mới truy cập được
+        path: PATH.ADMIN,
+        element: (
+            <AdminRoute>
+                <AdminLayout />
+            </AdminRoute>
+        ),
+        children: [
+            {
+                index: true,
+                element: <AdminDashboard />
+            },
+            {
+                path: "movies",
+                element: <AdminMovies />
+            },
+            {
+                path: "users",
+                element: <AdminUsers />
+            },
+            {
+                path: "schedules",
+                element: <AdminSchedules />
+            }
+        ]
     },
     {
         path: "*",
