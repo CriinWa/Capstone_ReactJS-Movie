@@ -1,10 +1,11 @@
+import { signInReducer } from '@/features/signIn/redux/signIn.slice';
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const store = configureStore({
     reducer: {
         // Thêm các slice reducer tại đây
-
+        signIn: signInReducer
     }
 })
 

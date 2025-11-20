@@ -18,7 +18,7 @@
 
 # axios
 
-# Cấu trúc thư mục dự án
+# Cấu trúc thư mục dự án | Single Responsibility Principle
 -component: 
  + ui: Chứa bộ core UI (input, button, select, radio,...)
  + common: Chứa component dùng chung

@@ -1,6 +1,7 @@
 import { PATH } from "@/constants";
 import { HomePages } from "@/features/home/components";
 import { SignInPage } from "@/features/signIn/components";
+import { SignUpPage } from "@/features/signUp/components";
 import { MainLayout } from "@/layouts/mainLayout/MainLayout";
 import { type RouteObject } from "react-router-dom";
 
@@ -23,6 +24,10 @@ export const routes: RouteObject[] = [
             {
                 path: PATH.SIGN_IN,
                 element: <SignInPage />
+            },
+            {
+                path: PATH.SIGN_UP,
+                element: <SignUpPage />
             }
         ],
     },

@@ -1,4 +1,4 @@
-import { API_BASE_URL, TOKEN_CYBERSOFT } from "@/constants";
+import { API_BASE_URL, STORAGEKEYS, TOKEN_CYBERSOFT } from "@/constants";
 import axios from "axios";
 
 
@@ -14,6 +14,10 @@ api.interceptors.request.use((config) => {
         headers: {
             ...config.headers,
             TokenCybersoft: TOKEN_CYBERSOFT,
+            Authorization: localStorage.getItem(STORAGEKEYS.ACCESSTOKEN) 
+                ? `Bearer ${localStorage.getItem(STORAGEKEYS.ACCESSTOKEN)}` 
+                : undefined
+            // nếu có accessToken trong localStorage thì thêm vào header Authorization 
         }
     } as unknown as typeof config; // ép kiểu lại để tránh lỗi TypeScript
 })
