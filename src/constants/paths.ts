@@ -1,6 +1,7 @@
 export const PATH = {
     HOME: "/",
-    MOVIE_DETAIL: (id: number | string) => `/movie/${id}`,
+    MOVIE_DETAIL: "/detail/:maPhim",
+    MOVIE_DETAIL_BY_ID: (id: number | string) => `/detail/${id}`,
     SIGN_IN: "/sign-in",
     SIGN_UP: "/sign-up",
     PROFILE: "/profile",

@@ -2,6 +2,7 @@ import { PATH } from "@/constants";
 import { HomePages } from "@/features/home/components";
 import { SignInPage } from "@/features/signIn/components";
 import { SignUpPage } from "@/features/signUp/components";
+import { MovieDetailPage } from "@/features/movieDetail/components";
 import { MainLayout } from "@/layouts/mainLayout/MainLayout";
 import { AdminLayout } from "@/layouts/adminLayout/AdminLayout";
 import { AdminRoute } from "@/components/routes";
@@ -24,8 +25,8 @@ export const routes: RouteObject[] = [
                 element: <HomePages />
             },
             {
-                path: PATH.MOVIE_DETAIL(":id"),
-                element: <div>Movie Page</div>
+                path: PATH.MOVIE_DETAIL,
+                element: <MovieDetailPage />
             },
             {
                 path: PATH.SIGN_IN,
