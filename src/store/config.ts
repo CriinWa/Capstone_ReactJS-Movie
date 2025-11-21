@@ -1,11 +1,13 @@
 import { signInReducer } from '@/features/signIn/redux/signIn.slice';
+import movieReducer from '@/features/home/redux/movie.slice';
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const store = configureStore({
     reducer: {
         // Thêm các slice reducer tại đây
-        signIn: signInReducer
+        signIn: signInReducer,
+        movies: movieReducer
     }
 })
 
