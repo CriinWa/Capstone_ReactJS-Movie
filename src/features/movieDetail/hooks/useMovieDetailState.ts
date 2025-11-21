@@ -24,7 +24,15 @@ export const useMovieDetailState = (movie: MovieDetail | undefined) => {
 
     const handleBookingClick = () => {
         const schedulesSection = document.getElementById('schedules-section');
-        schedulesSection?.scrollIntoView({ behavior: 'smooth' });
+        if (schedulesSection) {
+            const headerOffset = 100; // px, chỉnh lại nếu header cao hơn
+            const elementPosition = schedulesSection.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - headerOffset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+            });
+        }
     };
 
     return {

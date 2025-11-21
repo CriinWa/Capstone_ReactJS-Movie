@@ -1,6 +1,7 @@
 import type { TheaterCluster } from "@/services/quanLyPhim/type";
 import { formatScheduleDateTime, formatPrice, getDayOfWeek, DAY_FILTER_MAP } from "../utils/dateUtils";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { PATH } from "@/constants";
 
 type ScheduleListProps = {
     clusters: TheaterCluster[];
@@ -9,6 +10,7 @@ type ScheduleListProps = {
 
 export const ScheduleList = ({ clusters, selectedDay }: ScheduleListProps) => {
     const navigate = useNavigate();
+    const { maPhim } = useParams<{ maPhim: string }>(); // Lấy maPhim từ URL
 
     // Filter schedules theo ngày đã chọn
     const filterSchedulesByDay = (schedules: any[]) => {
@@ -22,7 +24,8 @@ export const ScheduleList = ({ clusters, selectedDay }: ScheduleListProps) => {
     };
 
     const handleBooking = (maLichChieu: string) => {
-        navigate(`/booking/${maLichChieu}`);
+        // Truyền maPhim và maLichChieu vào URL booking
+        navigate(PATH.BOOKING_BY_ID(maPhim!, maLichChieu));
     };
 
     if (clusters.length === 0) {

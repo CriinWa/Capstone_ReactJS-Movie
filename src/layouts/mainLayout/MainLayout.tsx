@@ -6,7 +6,7 @@ export const MainLayout = () => {
     <>
         <Header />
 
-        <div className="main-container min-h-[calc(100vh-72px)] flex items-center justify-center py-8">
+        <div className="main-container min-h-[calc(100vh-72px)] flex items-center justify-center py-8 mt-12">
             <main className="main-content w-full"> 
                 <Outlet />
             </main>

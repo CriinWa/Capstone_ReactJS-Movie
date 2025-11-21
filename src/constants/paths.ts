@@ -15,6 +15,10 @@ export const PATH = {
     ADMIN_USERS_CREATE: "/admin/users/create",
     ADMIN_USERS_EDIT: (id: number | string) => `/admin/users/edit/${id}`,
     ADMIN_SCHEDULES: "/admin/schedules",
+    
+    // Booking route
+    BOOKING: "/booking/:maPhim/:maLichChieu",
+    BOOKING_BY_ID: (maPhim: number | string, maLichChieu: number | string) => `/booking/${maPhim}/${maLichChieu}`,
 } as const; //dùng as const để read only
 
 //file index.ts trong /constants/paths.ts để quản lí các path và xuất path

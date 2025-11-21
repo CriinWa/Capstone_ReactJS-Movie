@@ -26,4 +26,5 @@ function createQueryKeyFactory<T extends string>(baseKey: T): QueryKeyFactory<[T
 export const queryKeys = {
     banner: createQueryKeyFactory('banner'),
     movieSchedule: createQueryKeyFactory('movieSchedule'),
+    booking: createQueryKeyFactory('booking'),
 }

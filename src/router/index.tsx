@@ -3,9 +3,10 @@ import { HomePages } from "@/features/home/components";
 import { SignInPage } from "@/features/signIn/components";
 import { SignUpPage } from "@/features/signUp/components";
 import { MovieDetailPage } from "@/features/movieDetail/components";
+import { BookingPage } from "@/features/datVe/components";
 import { MainLayout } from "@/layouts/mainLayout/MainLayout";
 import { AdminLayout } from "@/layouts/adminLayout/AdminLayout";
-import { AdminRoute } from "@/components/routes";
+import { AdminRoute, ProtectedRoute } from "@/components/routes";
 import { AdminDashboard } from "@/features/admin/dashboard/AdminDashboard";
 import { AdminMovies } from "@/features/admin/movies/AdminMovies";
 import { AdminUsers } from "@/features/admin/users/AdminUsers";
@@ -35,6 +36,14 @@ export const routes: RouteObject[] = [
             {
                 path: PATH.SIGN_UP,
                 element: <SignUpPage />
+            },
+            {
+                path: PATH.BOOKING,
+                element: (
+                    <ProtectedRoute>
+                        <BookingPage />
+                    </ProtectedRoute>
+                )
             }
         ],
     },
