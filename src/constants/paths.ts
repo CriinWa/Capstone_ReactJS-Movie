@@ -19,6 +19,11 @@ export const PATH = {
     // Booking route
     BOOKING: "/booking/:maPhim/:maLichChieu",
     BOOKING_BY_ID: (maPhim: number | string, maLichChieu: number | string) => `/booking/${maPhim}/${maLichChieu}`,
+    
+    // Static pages
+    CONTACT: "/contact",
+    NEWS: "/news",
+    APP: "/app",
 } as const; //dùng as const để read only
 
 //file index.ts trong /constants/paths.ts để quản lí các path và xuất path

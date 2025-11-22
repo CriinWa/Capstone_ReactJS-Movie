@@ -5,6 +5,9 @@ import { SignUpPage } from "@/features/signUp/components";
 import { MovieDetailPage } from "@/features/movieDetail/components";
 import { BookingPage } from "@/features/datVe/components";
 import { ProfilePage } from "@/features/profile/components";
+import { ContactPage } from "@/features/contact/components";
+import { NewsPage } from "@/features/news/components";
+import { AppPage } from "@/features/app/components";
 import { MainLayout } from "@/layouts/mainLayout/MainLayout";
 import { AdminLayout } from "@/layouts/adminLayout/AdminLayout";
 import { AdminRoute, ProtectedRoute } from "@/components/routes";
@@ -53,6 +56,18 @@ export const routes: RouteObject[] = [
                         <ProfilePage />
                     </ProtectedRoute>
                 )
+            },
+            {
+                path: PATH.CONTACT,
+                element: <ContactPage />
+            },
+            {
+                path: PATH.NEWS,
+                element: <NewsPage />
+            },
+            {
+                path: PATH.APP,
+                element: <AppPage />
             }
         ],
     },
