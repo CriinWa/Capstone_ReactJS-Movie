@@ -30,5 +30,10 @@ export const queryKeys = {
     user: {
         all: ['user'] as const,
         profile: ['user', 'profile'] as const,
-    }
+    },
+    cinema: {
+        all: ['cinema'] as const,
+        systems: ['cinema', 'systems'] as const,
+        showtime: (maHeThongRap: string) => ['cinema', 'showtime', maHeThongRap] as const,
+    },
 }
