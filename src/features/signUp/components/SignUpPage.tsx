@@ -6,7 +6,7 @@ import { Navigate, Link } from "react-router-dom";
 
 export const SignUpPage = () => {
     const { form, onSubmit, isLoading } = useSignUp();
-    const { control, handleSubmit, formState: { errors } } = form;
+    const { control, handleSubmit} = form;
 
     const { user } = useAuth();
     if (user) {

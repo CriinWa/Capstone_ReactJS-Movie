@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query'
-import type { SignUpPayload, quanLyNguoiDungServices } from '@/services/quanLyNguoiDung/quanLyNguoiDungServices'
+import type { SignUpPayload} from '@/services/quanLyNguoiDung/quanLyNguoiDungServices'
 import { quanLyNguoiDungServices as nguoiDungServices } from '@/services/quanLyNguoiDung/quanLyNguoiDungServices'
 
 export const useMutationSignUp = () => {

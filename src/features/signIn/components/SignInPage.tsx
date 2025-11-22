@@ -6,7 +6,8 @@ import { Navigate } from "react-router";
 
 export const SignInPage = () => {
     const {form, onSubmit, isLoading} = useSignIn();
-    const { control, handleSubmit, formState: { errors } } = form;
+    const { control, handleSubmit} = form;
+    // const { control, handleSubmit, formState: { errors } } = form;
     // console.log("🚀 ~ SignInPage ~ errors:", errors)
     
 //     const onSubmit = (data: any) => {
