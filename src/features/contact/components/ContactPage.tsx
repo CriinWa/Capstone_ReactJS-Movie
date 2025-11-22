@@ -136,7 +136,7 @@ export const ContactPage = () => {
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-blue-600 dark:text-blue-400"
                       fill="none"
@@ -168,7 +168,7 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-green-600 dark:text-green-400"
                       fill="none"
@@ -197,7 +197,7 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-red-600 dark:text-red-400"
                       fill="none"
@@ -226,7 +226,7 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-purple-600 dark:text-purple-400"
                       fill="none"

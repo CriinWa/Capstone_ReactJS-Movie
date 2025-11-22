@@ -101,11 +101,15 @@ export function useBookingMutation(maLichChieu: string, options?: BookingMutatio
     
     // onSuccess: Chạy khi đặt vé thành công
     onSuccess: (...args) => {
-      // 1. Invalidate cache để đánh dấu data cũ là stale
+      // 1. Invalidate booking seats cache để đánh dấu data cũ là stale
       //    Lần tới khi fetch useBookingSeats sẽ lấy data mới (ghế đã đặt)
       queryClient.invalidateQueries({ queryKey: queryKeys.booking.detail(maLichChieu) });
       
-      // 2. Delegate onSuccess callback về component
+      // 2. Invalidate user profile cache để booking history cập nhật ngay
+      //    Fix bug: Booking history không cập nhật sau khi đặt vé thành công
+      queryClient.invalidateQueries({ queryKey: queryKeys.user.profile });
+      
+      // 3. Delegate onSuccess callback về component
       //    Component sẽ quyết định: toast, navigate, refetch, etc.
       //    Spread args để pass đầy đủ (data, variables, context)
       options?.onSuccess?.(...args);

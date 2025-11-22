@@ -34,7 +34,7 @@ export const TrailerModal = ({ isOpen, onClose, trailerUrl, movieTitle }: Traile
         <div
             className="fixed inset-0 z-50 flex items-center justify-center  p-4"
             onClick={onClose}
-            style={{ background: 'rgba(0,0,0,0.75)' }}
+            style={{ background: 'rgba(0,0,0,0.75)'}}
         >
             <div
                 className="bg-white rounded-lg shadow-2xl max-w-4xl w-full overflow-hidden"

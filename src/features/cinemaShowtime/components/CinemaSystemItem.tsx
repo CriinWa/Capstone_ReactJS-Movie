@@ -33,7 +33,7 @@ export const CinemaSystemItem: React.FC<CinemaSystemItemProps> = ({
     <button
       onClick={onClick}
       className={`
-        w-full flex flex-col items-center justify-center gap-1.5 p-2 rounded-lg transition-all duration-200 min-h-[80px]
+        w-full flex flex-col items-center justify-center gap-1.5 p-2 rounded-lg transition-all duration-200 min-h-20
         ${isActive 
           ? 'bg-red-50 border-2 border-red-500 shadow-md' 
           : 'bg-white border-2 border-transparent hover:bg-gray-50 hover:shadow-sm'

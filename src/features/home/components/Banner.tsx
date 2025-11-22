@@ -1,10 +1,4 @@
-import React, { useEffect } from 'react'
-import { Button } from '@/components/ui';
-import { quanLyPhimServices } from '@/services/quanLyPhim/quanLyPhimServices';
-import { useQuery } from '@tanstack/react-query';
-import { queryKeys } from '@/constants';
 import { useQueryBanners } from '../hook';
-// import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -56,18 +50,33 @@ export const Banner = () => {
   console.log("🚀 ~ Banner ~ banner:", banners?.data.content)
 
   return (
-    <div className='container mx-auto'>
-      <Carousel className="w-full">
+    <div className='container mx-auto px-4'>
+      <div className="relative">
+        <Carousel 
+          className="w-full"
+          opts={{
+            loop: true,
+          }}
+        >
           <CarouselContent>
             {banners?.data.content.map((item) => (
               <CarouselItem key={item.maPhim}>
-                <img src={item.hinhAnh} alt={`Banner ${item.maPhim}`} />
+                <div className="relative w-full bg-black rounded-lg overflow-hidden">
+                  <img 
+                    src={item.hinhAnh} 
+                    alt={`Banner ${item.maPhim}`}
+                    className="w-full h-auto object-contain max-h-[600px]"
+                  />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-      <CarouselNext />
-      <CarouselPrevious />
-    </Carousel>
+          
+          {/* Navigation buttons positioned on top of banner */}
+          <CarouselPrevious className="left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-none" />
+          <CarouselNext className="right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-none" />
+        </Carousel>
+      </div>
     </div>
   )
 }

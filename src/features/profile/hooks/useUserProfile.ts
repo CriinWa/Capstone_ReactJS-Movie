@@ -21,7 +21,8 @@ export function useUserProfile() {
       // API trả về response.data.content
       return response.data.content;
     },
-    staleTime: 5 * 60 * 1000, // Cache 5 phút
-    refetchOnWindowFocus: true, // Refetch khi focus lại window
+    staleTime: 1 * 60 * 1000, // Cache 1 phút (giảm từ 5 phút để data fresh hơn)
+    refetchOnWindowFocus: false, // Tắt auto refetch để tránh gọi API liên tục
+    // Note: Data sẽ tự động refetch khi invalidate (sau khi đặt vé thành công)
   });
 }
