@@ -27,4 +27,8 @@ export const queryKeys = {
     banner: createQueryKeyFactory('banner'),
     movieSchedule: createQueryKeyFactory('movieSchedule'),
     booking: createQueryKeyFactory('booking'),
+    user: {
+        all: ['user'] as const,
+        profile: ['user', 'profile'] as const,
+    }
 }

@@ -30,3 +30,55 @@ export type SignUpResponse = {
 
 //Định nghĩa kiểu dữ liệu của phản hồi đăng ký từ API
 //SignUpResponse: kiểu dữ liệu trả về khi người dùng đăng ký thành công
+
+// ============ PROFILE TYPES ============
+
+// User Profile Response - Thông tin chi tiết người dùng
+export interface UserProfile {
+  taiKhoan: string;
+  matKhau: string;
+  hoTen: string;
+  email: string;
+  soDT: string;
+  maNhom: string;
+  maLoaiNguoiDung: string;
+  loaiNguoiDung: {
+    maLoaiNguoiDung: string;
+    tenLoai: string;
+  } | null;
+  thongTinDatVe: BookingHistoryItem[];
+}
+
+// Booking History Item - Thông tin lịch sử đặt vé
+export interface BookingHistoryItem {
+  maVe: number;
+  ngayDat: string;
+  tenPhim: string;
+  hinhAnh: string;
+  giaVe: number;
+  thoiLuongPhim: number;
+  danhSachGhe: BookingSeatInfo[];
+}
+
+// Booking Seat Info - Thông tin ghế đã đặt
+export interface BookingSeatInfo {
+  maHeThongRap: string;
+  tenHeThongRap: string;
+  maCumRap: string;
+  tenCumRap: string;
+  maRap: number;
+  tenRap: string;
+  maGhe: number;
+  tenGhe: string;
+}
+
+// Update Profile Request - Dữ liệu cập nhật thông tin người dùng
+export interface UpdateProfileRequest {
+  taiKhoan: string;
+  matKhau: string;
+  email: string;
+  soDt: string;
+  maNhom: string;
+  maLoaiNguoiDung: string;
+  hoTen: string;
+}

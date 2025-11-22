@@ -4,6 +4,7 @@ import { SignInPage } from "@/features/signIn/components";
 import { SignUpPage } from "@/features/signUp/components";
 import { MovieDetailPage } from "@/features/movieDetail/components";
 import { BookingPage } from "@/features/datVe/components";
+import { ProfilePage } from "@/features/profile/components";
 import { MainLayout } from "@/layouts/mainLayout/MainLayout";
 import { AdminLayout } from "@/layouts/adminLayout/AdminLayout";
 import { AdminRoute, ProtectedRoute } from "@/components/routes";
@@ -42,6 +43,14 @@ export const routes: RouteObject[] = [
                 element: (
                     <ProtectedRoute>
                         <BookingPage />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: PATH.PROFILE,
+                element: (
+                    <ProtectedRoute>
+                        <ProfilePage />
                     </ProtectedRoute>
                 )
             }
