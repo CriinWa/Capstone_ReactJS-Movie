@@ -1,34 +1,17 @@
+# Capstone_React - Movie Booking Website
+**BC86 Capstone_Movie React TypeScript**
 
+## 👥 Nhóm 
+- **CriinWa: Huỳnh Khôi Nguyên** 
+- **minhkhanh2412: Lê Minh Khánh**
 
-# react-router-dom
+## 📋 PHÂN CÔNG:
+- **Khôi Nguyên: trang chủ, signIn, signUp, trang chi tiết phim, trang đặt vé, profile** 
+- **Minh Khánh: trang admin, quản lý phim, quản lý user, tạo lịch chiếu**
 
-# @reduxjs/toolkit
+## Link
+### Video Demo: 
+### Deploy: https://capstone-react-js-movie.vercel.app/
 
-# react-redux
-
-# @tanstack/react-query
-
-# react-hook-form
-
-# zod
-
-# @hookform/resolvers
-
-# tailwindcss
-
-# axios
-
-# Cấu trúc thư mục dự án | Single Responsibility Principle
--component: 
- + ui: Chứa bộ core UI (input, button, select, radio,...)
- + common: Chứa component dùng chung
-
--layouts: MainLayout, AuthLayouts, AdminLayouts
-
--features: Chứa toàn bộ source liên quan đến 1 features (home, movieDetail, signIn, signUp,..)
--lib: custom lại thư viện dự án
--router: 
-
--services: call api
-
-- schema: (trong SignIn chẳn hạn) để validation form
+## Nội dung làm theo yêu cầu: 
+### https://apicrm.cybersoft.edu.vn/files/02-03-2023-02-16-09-api-movie.pdf

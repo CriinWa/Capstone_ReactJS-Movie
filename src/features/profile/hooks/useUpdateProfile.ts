@@ -57,9 +57,9 @@ export function useUpdateProfile(options?: UpdateProfileMutationOptions) {
     onSuccess: (...args) => {
       const [response] = args;
       
-      // 1. Invalidate cache để đánh dấu data cũ là stale
-      //    Lần tới khi fetch useUserProfile sẽ lấy data mới
-      queryClient.invalidateQueries({ queryKey: queryKeys.user.profile });
+      // 1. Refetch profile ngay lập tức để có data mới
+      //    Thay vì chỉ invalidate (đợi lần fetch tiếp theo)
+      queryClient.refetchQueries({ queryKey: queryKeys.user.profile });
       
       // 2. Cập nhật Redux store với user info mới
       //    Để Header và các component khác có thể access ngay
