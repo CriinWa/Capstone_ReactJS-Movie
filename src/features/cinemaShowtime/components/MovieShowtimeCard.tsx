@@ -39,7 +39,7 @@ export const MovieShowtimeCard: React.FC<MovieShowtimeCardProps> = ({ movie }) =
             alt={movie.tenPhim}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             onError={(e) => {
-              e.currentTarget.src = 'https://via.placeholder.com/96x144?text=No+Image';
+              e.currentTarget.src = 'https://placehold.co/96x144?text=No+Image';
             }}
           />
           
