@@ -11,7 +11,7 @@ const movieSchema = z.object({
     trailer: z.string().optional(),
     moTa: z.string().min(1, 'Mô tả không được để trống'),
     ngayKhoiChieu: z.string().min(1, 'Ngày khởi chiếu không được để trống'),
-    danhGia: z.number().min(0).max(5, 'Đánh giá từ 0-5'),
+    danhGia: z.number().min(0).max(10, 'Đánh giá từ 0-10'),
     hot: z.boolean(),
     dangChieu: z.boolean(),
     sapChieu: z.boolean(),

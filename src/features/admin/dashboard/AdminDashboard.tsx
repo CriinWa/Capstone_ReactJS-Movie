@@ -1,3 +1,6 @@
+import { PATH } from "@/constants";
+import { Link } from "react-router-dom";
+
 export const AdminDashboard = () => {
     const currentDate = new Date().toLocaleDateString('vi-VN', { 
         weekday: 'long', 
@@ -134,7 +137,7 @@ export const AdminDashboard = () => {
                         <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Shortcuts</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <a href="/admin/movies" className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition-all">
+                        <Link to={PATH.ADMIN_MOVIES} className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition-all">
                             <div className="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                 🎬
                             </div>
@@ -145,9 +148,9 @@ export const AdminDashboard = () => {
                             <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                             </svg>
-                        </a>
+                        </Link>
 
-                        <a href="/admin/users" className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all">
+                        <Link to={PATH.ADMIN_USERS} className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all">
                             <div className="shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                 👥
                             </div>
@@ -158,9 +161,9 @@ export const AdminDashboard = () => {
                             <svg className="w-5 h-5 text-gray-400 group-hover:text-green-600 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                             </svg>
-                        </a>
+                        </Link>
 
-                        <a href="/admin/schedules" className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-purple-200 hover:bg-purple-50 transition-all">
+                        <Link to={PATH.ADMIN_SCHEDULES} className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-purple-200 hover:bg-purple-50 transition-all">
                             <div className="shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                 📅
                             </div>
@@ -171,9 +174,9 @@ export const AdminDashboard = () => {
                             <svg className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                             </svg>
-                        </a>
+                        </Link>
 
-                        <a href="/" className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-cyan-200 hover:bg-cyan-50 transition-all">
+                        <Link to={PATH.HOME} className="group flex items-center gap-4 p-4 rounded-xl border-2 border-gray-100 hover:border-cyan-200 hover:bg-cyan-50 transition-all">
                             <div className="shrink-0 w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                 🏠
                             </div>
@@ -184,7 +187,7 @@ export const AdminDashboard = () => {
                             <svg className="w-5 h-5 text-gray-400 group-hover:text-cyan-600 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                             </svg>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -249,38 +252,6 @@ export const AdminDashboard = () => {
                 </div>
             </div>
 
-            {/* Tips */}
-            <div className="relative overflow-hidden bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-2xl shadow-2xl">
-                <div className="relative p-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div className="flex-1 text-white">
-                            <div className="flex items-center gap-2 mb-3">
-                                <span className="text-3xl">🚀</span>
-                                <h3 className="text-2xl md:text-3xl font-bold">Sẵn sàng bắt đầu?</h3>
-                            </div>
-                            <p className="text-purple-100 text-lg mb-4 max-w-2xl">
-                                Khám phá toàn bộ tính năng quản lý và tối ưu hóa vận hành hệ thống rạp phim của bạn
-                            </p>
-                            <div className="flex flex-wrap gap-3">
-                                <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30">
-                                    <span className="text-lg">💡</span>
-                                    <span className="text-sm font-medium">Tips: Dùng phím tắt để làm việc nhanh hơn</span>
-                                </div>
-                                <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30">
-                                    <span className="text-lg">📚</span>
-                                    <span className="text-sm font-medium">Xem hướng dẫn chi tiết</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hidden lg:block">
-                            <div className="relative">
-                                <div className="text-7xl">🎯</div>
-                                <div className="absolute -top-3 -right-3 text-3xl">⭐</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };
