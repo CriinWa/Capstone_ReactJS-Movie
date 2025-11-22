@@ -49,7 +49,7 @@ export const CinemaSystemItem: React.FC<CinemaSystemItemProps> = ({
           alt={tenHeThongRap}
           className="w-full h-full object-contain p-1.5 bg-white"
           onError={(e) => {
-            e.currentTarget.src = 'https://via.placeholder.com/48?text=Cinema';
+            e.currentTarget.src = 'https://placehold.co/48?text=Cinema';
           }}
         />
       </div>

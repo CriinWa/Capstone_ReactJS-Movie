@@ -82,3 +82,55 @@ export interface UpdateProfileRequest {
   maLoaiNguoiDung: string;
   hoTen: string;
 }
+
+// ============ ADMIN USER MANAGEMENT TYPES ============
+
+// User List Response
+export interface UserListResponse {
+  currentPage: number;
+  count: number;
+  totalPages: number;
+  totalCount: number;
+  items: User[];
+}
+
+// User Item
+export interface User {
+  taiKhoan: string;
+  matKhau: string;
+  hoTen: string;
+  email: string;
+  soDt: string;
+  maNhom: string;
+  maLoaiNguoiDung: string;
+}
+
+// Create User Payload
+export interface CreateUserPayload {
+  taiKhoan: string;
+  matKhau: string;
+  email: string;
+  soDt: string;
+  maNhom: string;
+  maLoaiNguoiDung: string;
+  hoTen: string;
+}
+
+// Update User Payload
+export interface UpdateUserPayload {
+  taiKhoan: string;
+  matKhau: string;
+  email: string;
+  soDt: string;
+  maNhom: string;
+  maLoaiNguoiDung: string;
+  hoTen: string;
+}
+
+// API Response Wrapper
+export interface ApiResponse<T> {
+  statusCode: number;
+  message: string;
+  content: T;
+  dateTime: string;
+}

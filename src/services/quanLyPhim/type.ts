@@ -81,3 +81,29 @@ export interface MovieScheduleResponse {
   dateTime: string;
   messageConstants: string | null;
 }
+
+// Admin Movie Management Types
+export interface ApiResponse<T = any> {
+  statusCode: number;
+  message: string;
+  content: T;
+  dateTime: string;
+  messageConstants: string | null;
+}
+
+export interface CreateMoviePayload {
+  tenPhim: string;
+  trailer: string;
+  moTa: string;
+  ngayKhoiChieu: string;
+  sapChieu: boolean;
+  dangChieu: boolean;
+  hot: boolean;
+  danhGia: number;
+  maNhom: string;
+  hinhAnh?: File;
+}
+
+export interface UpdateMoviePayload extends CreateMoviePayload {
+  maPhim: number;
+}

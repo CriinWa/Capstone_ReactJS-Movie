@@ -55,3 +55,57 @@ export interface CinemaShowtime {
   mahom: string;
   lstCumRap: TheaterCluster[];
 }
+
+// ============ ADMIN SCHEDULE MANAGEMENT TYPES ============
+
+/**
+ * Payload tạo lịch chiếu mới
+ */
+export interface CreateSchedulePayload {
+  maPhim: number;
+  ngayChieuGioChieu: string; // Format: DD/MM/YYYY HH:mm:ss
+  maRap: string;
+  giaVe: number;
+}
+
+/**
+ * Thông tin rạp (phòng chiếu)
+ */
+export interface Theater {
+  maRap: number;
+  tenRap: string;
+  maCumRap: string;
+  tenCumRap?: string;
+  maHeThongRap?: string;
+  tenHeThongRap?: string;
+}
+
+/**
+ * Thông tin cụm rạp
+ */
+export interface TheaterClusterInfo {
+  maCumRap: string;
+  tenCumRap: string;
+  diaChi: string;
+  danhSachRap: Theater[];
+}
+
+/**
+ * Thông tin hệ thống rạp với danh sách cụm rạp
+ */
+export interface CinemaSystemWithTheaters {
+  maHeThongRap: string;
+  tenHeThongRap: string;
+  logo: string;
+  lstCumRap: TheaterClusterInfo[];
+}
+
+/**
+ * Response wrapper cho API
+ */
+export interface ApiResponse<T> {
+  statusCode: number;
+  message: string;
+  content: T;
+  dateTime: string;
+}
