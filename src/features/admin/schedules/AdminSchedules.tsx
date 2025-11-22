@@ -213,7 +213,7 @@ export const AdminSchedules = () => {
                                 <ScheduleForm
                                     movies={movies}
                                     cinemaSystems={cinemaSystems}
-                                    theaters={theaters}
+                                    theaters={theaters as any}
                                     onSubmit={handleSubmit}
                                     onCancel={handleCloseModal}
                                     isSubmitting={isSubmitting}

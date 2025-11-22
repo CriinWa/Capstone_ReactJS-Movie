@@ -53,6 +53,7 @@ export interface CinemaShowtime {
   tenHeThongRap: string;
   logo: string;
   mahom: string;
+  maCumRap?: string;
   lstCumRap: TheaterCluster[];
 }
 
@@ -97,7 +98,11 @@ export interface CinemaSystemWithTheaters {
   maHeThongRap: string;
   tenHeThongRap: string;
   logo: string;
-  lstCumRap: TheaterClusterInfo[];
+  maCumRap: string;
+  tenCumRap: string;
+  diaChi: string;
+  lstCumRap?: TheaterClusterInfo[];
+  danhSachRap?: Theater[];
 }
 
 /**

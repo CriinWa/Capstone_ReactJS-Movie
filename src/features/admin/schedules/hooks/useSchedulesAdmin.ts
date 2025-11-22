@@ -2,7 +2,6 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { quanLyRapServices } from '@/services/quanLyRap/quanLyRapServices';
 import { quanLyPhimServices } from '@/services/quanLyPhim/quanLyPhimServices';
 import type { CreateSchedulePayload } from '@/services/quanLyRap/type';
-import toast from 'react-hot-toast';
 
 // Hook lấy danh sách hệ thống rạp
 export const useCinemaSystems = () => {
